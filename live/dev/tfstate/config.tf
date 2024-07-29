@@ -12,11 +12,11 @@ terraform {
 
   required_version = "~> 1.0"
 
-  backend "s3" {
-    bucket         = "fastapi-sls-starter-dev-tfstate"
-    key            = "shared/tfstate/terraform.tfstate"
-    dynamodb_table = "fastapi-sls-starter-dev-tfstate-locks"
-    region         = "eu-west-1"
-    encrypt        = true
-  }
+#   backend "s3" {
+#     bucket         = "steps-backend-dev-tfstate"
+#     key            = "shared/tfstate/terraform.tfstate"
+#     dynamodb_table = "steps-backend-dev-tfstate-locks"
+#     region         = "eu-west-1"
+#     encrypt        = true
+#   }
 }

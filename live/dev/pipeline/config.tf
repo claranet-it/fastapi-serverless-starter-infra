@@ -13,9 +13,9 @@ terraform {
   required_version = "~> 1.0"
 
   backend "s3" {
-    bucket         = "fastapi-sls-starter-dev-tfstate"
-    key            = "pipeline/fastapi-sls-starter-dev/terraform.tfstate"
-    dynamodb_table = "fastapi-sls-starter-dev-tfstate-locks"
+    bucket         = "steps-backend-dev-tfstate"
+    key            = "pipeline/steps-backend-dev/terraform.tfstate"
+    dynamodb_table = "steps-backend-dev-tfstate-locks"
     region         = "eu-west-1"
     encrypt        = true
   }
