@@ -22,6 +22,10 @@ phases:
       - aws ssm get-parameter --with-decryption --name /pipeline/${PIPELINE_NAME} --query Parameter.Value --output text > .env.${STAGE_NAME}.local     
       - cat .env.${STAGE_NAME}.local | sed -nr 's/(^.*=.*$)/declare -x \1/p' > .aws.ssm.local
       - source .aws.ssm.local
+      - echo "### Poetry version..."
+      - poetry --version
+      - echo "### Install poetry plugin export..."
+      - pip install poetry-plugin-export
       - echo "### Terraform Init..."
       - make terraform-init stage=${STAGE_NAME} region=${AWS_REGION} 
   build:
