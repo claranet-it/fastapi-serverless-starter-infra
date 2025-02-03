@@ -13,7 +13,7 @@ phases:
       - echo "### Installing Poetry..."
       - pip install poetry
       - echo "### Installing Poetry dependencies..."
-      - poetry install      
+      - poetry install --no-root  
   pre_build:
     commands:      
       - echo "### Download parameters from SSM/ParameterStore (do escape directly on ssm)..."
